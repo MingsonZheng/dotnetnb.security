@@ -7,9 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetNB.Security.Core", "D
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetNB.Security.ActionAccess", "DotNetNB.Security.ActionAccess\DotNetNB.Security.ActionAccess.csproj", "{3AC4947B-0A4D-48EB-BFD7-802238223181}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApplication1", "WebApplication1\WebApplication1.csproj", "{6B82850B-3D55-4853-B599-DE03E883AE4D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetNB.Security.EntityAccess", "DotNetNB.Scurity.EntityAccess\DotNetNB.Security.EntityAccess.csproj", "{5896B457-893F-48AA-9E50-AFF5146FB935}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetNB.Security.EntityAccess", "DotNetNB.Scurity.EntityAccess\DotNetNB.Security.EntityAccess.csproj", "{5896B457-893F-48AA-9E50-AFF5146FB935}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetNB.WebApplication", "DotNetNB.WebApplication\DotNetNB.WebApplication.csproj", "{7AB873B0-5587-44F5-B0A6-8E24E607979F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,14 +25,14 @@ Global
 		{3AC4947B-0A4D-48EB-BFD7-802238223181}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3AC4947B-0A4D-48EB-BFD7-802238223181}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3AC4947B-0A4D-48EB-BFD7-802238223181}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6B82850B-3D55-4853-B599-DE03E883AE4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6B82850B-3D55-4853-B599-DE03E883AE4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6B82850B-3D55-4853-B599-DE03E883AE4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6B82850B-3D55-4853-B599-DE03E883AE4D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5896B457-893F-48AA-9E50-AFF5146FB935}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5896B457-893F-48AA-9E50-AFF5146FB935}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5896B457-893F-48AA-9E50-AFF5146FB935}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5896B457-893F-48AA-9E50-AFF5146FB935}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AB873B0-5587-44F5-B0A6-8E24E607979F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AB873B0-5587-44F5-B0A6-8E24E607979F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AB873B0-5587-44F5-B0A6-8E24E607979F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AB873B0-5587-44F5-B0A6-8E24E607979F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

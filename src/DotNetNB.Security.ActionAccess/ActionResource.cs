@@ -13,6 +13,8 @@ namespace DotNetNB.Security.ActionAccess
 
         public string? ActionName { get; set; }
 
+        public string DisplayName { get; set; }
+
         public string? RouteTemplate { get; set; }
 
         public string? HttpVerb { get; set; }

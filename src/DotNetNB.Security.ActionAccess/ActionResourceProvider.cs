@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Controllers;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.AspNetCore.Mvc.Internal;
+using Microsoft.AspNetCore.Routing;
 
 namespace DotNetNB.Security.ActionAccess
 {
@@ -26,17 +27,17 @@ namespace DotNetNB.Security.ActionAccess
                 if (action is ControllerActionDescriptor)
                 {
                     var actionDescriptor = action as ControllerActionDescriptor;
-                    var httpMethod = actionDescriptor.ActionConstraints.FirstOrDefault(
-                        c => c is HttpMethodActionConstraint) as HttpMethodActionConstraint;
+                    var httpMethod = action.EndpointMetadata.Where(m => m is HttpMethodMetadata).FirstOrDefault() as HttpMethodMetadata;
 
                     var routeAttribute =
                         actionDescriptor?.EndpointMetadata.FirstOrDefault(m => m is RouteAttribute) as RouteAttribute;
 
                     var resourceData = new ActionResourceData();
-                    resourceData.HttpVerb = httpMethod?.HttpMethods.FirstOrDefault();
+                    resourceData.HttpVerb = httpMethod?.HttpMethods.First();
                     resourceData.ActionName = actionDescriptor?.ActionName;
                     resourceData.ControllerName = actionDescriptor?.ControllerName;
                     resourceData.RouteTemplate = routeAttribute?.Template;
+                    resourceData.DisplayName = action.DisplayName;
 
                     actionResources.Add(new ActionResource()
                     {

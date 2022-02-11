@@ -9,7 +9,7 @@
     }
   },
   "profiles": {
-    "WebApplication1": {
+    "DotNetNB.WebApplication": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "swagger",

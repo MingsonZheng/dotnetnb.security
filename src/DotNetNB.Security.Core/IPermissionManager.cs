@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using DotNetNB.Security.Core.Models;
 
 namespace DotNetNB.Security.Core
 {
-    internal class IPermissionManager
+    public interface IPermissionManager
     {
+        public Task Create(string key, string displayName, string description, IEnumerable<string> resources);
+
+        public Task<IEnumerable<Permission>> GetAllAsync();
     }
 }

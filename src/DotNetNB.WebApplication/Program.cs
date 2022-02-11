@@ -1,6 +1,5 @@
 using DotNetNB.Security.ActionAccess;
 using DotNetNB.Security.Core.Extensions;
-using DotNetNB.Security.EntityAccess;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,8 +12,8 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddSecurity(options =>
 {
-    options.AddActionAccessControl()
-        .AddEntityAccessControl();
+    options.AddActionAccessControl();
+    //.AddEntityAccessControl();
 });
 
 var app = builder.Build();

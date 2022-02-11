@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using DotNetNB.Security.Core.Models;
 
 namespace DotNetNB.Security.Core.Store
 {
-    internal class IPermissionStore
+    public interface IPermissionStore
     {
+        public Task CreateAsync(Permission permission);
+
+        public Task<Permission> GetByKeyAsync(string key);
+
+        public Task<IEnumerable<Permission>> GetAllAsync();
     }
 }
