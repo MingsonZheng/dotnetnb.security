@@ -8,4 +8,4 @@
 - DotNetNB.Security.EntityAccess：扫描 entities；添加 ef savechanges interceptor
 - DotNetNB.Security.Store.EntityFramework：基于 mysql 创建 PermissionStore 和 ResourceStore
 - DotNetNB.Security.Identity：将权限赋予角色或用户；在用户登录时将 Permissions 写入用户身份 claims
-
+- DotNetNB.WebApplication：创建 ResourceController 和 PermissionController 进行验证
