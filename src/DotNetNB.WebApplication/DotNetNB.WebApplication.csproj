@@ -17,6 +17,7 @@
     <ProjectReference Include="..\DotNetNB.Scurity.EntityAccess\DotNetNB.Security.EntityAccess.csproj" />
     <ProjectReference Include="..\DotNetNB.Security.ActionAccess\DotNetNB.Security.ActionAccess.csproj" />
     <ProjectReference Include="..\DotNetNB.Security.Core\DotNetNB.Security.Core.csproj" />
+    <ProjectReference Include="..\DotNetNB.Security.Identity\DotNetNB.Security.Identity.csproj" />
   </ItemGroup>
 
 </Project>

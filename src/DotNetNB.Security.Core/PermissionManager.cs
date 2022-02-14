@@ -14,7 +14,7 @@ public class PermissionManager : IPermissionManager
         _permissionStore = permissionStore;
     }
 
-    public async Task Create(string key, string displayName, string description, IEnumerable<string> resourceKeys)
+    public async Task CreateAsync(string key, string displayName, string description, IEnumerable<string> resourceKeys)
     {
         if (string.IsNullOrEmpty(key))
             throw new ArgumentNullException(nameof(key));
@@ -28,6 +28,11 @@ public class PermissionManager : IPermissionManager
         permission.Resources = resources;
 
         await _permissionStore.CreateAsync(permission);
+    }
+
+    public async Task<Permission> GetAsync(string key)
+    {
+        return await _permissionStore.GetByKeyAsync(key);
     }
 
     public async Task<IEnumerable<Permission>> GetAllAsync()

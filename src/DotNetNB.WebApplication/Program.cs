@@ -1,5 +1,7 @@
 using DotNetNB.Security.ActionAccess;
 using DotNetNB.Security.Core.Extensions;
+using DotNetNB.Security.Identity.Extensions;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +11,9 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+//builder.Services.AddIdentity<IdentityUser<string>, IdentityRole<string>>()
+//    .WithPermissions<IdentityUser<string>, IdentityRole<string>>();
 
 builder.Services.AddSecurity(options =>
 {
