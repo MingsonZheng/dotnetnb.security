@@ -24,7 +24,7 @@ namespace DotNetNB.WebApplication.Controllers
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] CreatePermissionRequest request)
         {
-            await _permissionManager.CreateAsync(request.Key, request.DisplayName, request.Description, request.resources);
+            //await _permissionManager.CreateAsync(request.Key, request.DisplayName, request.Description, request.resources);
             return Ok();
         }
     }

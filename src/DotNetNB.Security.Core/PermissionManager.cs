@@ -14,25 +14,51 @@ public class PermissionManager : IPermissionManager
         _permissionStore = permissionStore;
     }
 
-    public async Task CreateAsync(string key, string displayName, string description, IEnumerable<string> resourceKeys)
+    public async Task CreateAsync(string key, string group, string displayName, string description, IEnumerable<string> resourceKeys)
     {
-        if (string.IsNullOrEmpty(key))
-            throw new ArgumentNullException(nameof(key));
+        var permission = new Permission()
+        {
+            Key = key,
+            Group = group,
+            DisplayName = displayName,
+            Description = description,
+            Resources = resourceKeys.Select(r => new Resource() { Key = r })
+        };
 
-        var origin = await _permissionStore.GetByKeyAsync(key);
+        await CreateAsync(permission);
+    }
+
+    public async Task CreateAsync(Permission permission)
+    {
+        if (string.IsNullOrEmpty(permission.Key))
+            throw new ArgumentNullException(nameof(permission.Key));
+
+        if (string.IsNullOrEmpty(permission.Group))
+            throw new ArgumentNullException(nameof(permission.Group));
+
+        var origin = await _permissionStore.GetByKeyAsync(permission.Key);
         if (origin != null)
             throw new InvalidOperationException("Duplicated permission key found");
 
-        var permission = new Permission { Key = key, DisplayName = displayName, Description = description };
+        var resourceKeys = permission.Resources?.Select(r => r.Key);
         var resources = await _resourceManager.GetByKeysAsync(resourceKeys);
-        permission.Resources = resources;
+        if (!resources.Any())
+            throw new InvalidOperationException("invalid resource list");
 
+        permission.Resources = resources;
         await _permissionStore.CreateAsync(permission);
     }
 
     public async Task<Permission> GetAsync(string key)
     {
         return await _permissionStore.GetByKeyAsync(key);
+
+
+    }
+
+    public async Task<IEnumerable<Permission>> GetByGroupAsync(string @group)
+    {
+        return await _permissionStore.GetByGroupAsync(group);
     }
 
     public async Task<IEnumerable<Permission>> GetAllAsync()

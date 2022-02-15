@@ -1,29 +1,34 @@
 ﻿using DotNetNB.Security.Core.Models;
 
-namespace DotNetNB.Security.Core.Store
+namespace DotNetNB.Security.Core.Store;
+
+public class DefaultPermissionStore : IPermissionStore
 {
-    public class DefaultPermissionStore : IPermissionStore
+    private List<Permission> _list;
+
+    public DefaultPermissionStore()
     {
-        private List<Permission> _list;
+        _list = new List<Permission>();
+    }
 
-        public DefaultPermissionStore()
-        {
-            _list = new List<Permission>();
-        }
+    public async Task CreateAsync(Permission permission)
+    {
+        _list.Add(permission);
+    }
 
-        public async Task CreateAsync(Permission permission)
-        {
-            _list.Add(permission);
-        }
 
-        public async Task<Permission> GetByKeyAsync(string key)
-        {
-            return _list.SingleOrDefault(r => r.Key == key);
-        }
+    public async Task<Permission> GetByKeyAsync(string key)
+    {
+        return _list.SingleOrDefault(r => r.Key == key);
+    }
 
-        public async Task<IEnumerable<Permission>> GetAllAsync()
-        {
-            return _list;
-        }
+    public async Task<IEnumerable<Permission>> GetAllAsync()
+    {
+        return _list;
+    }
+
+    public async Task<IEnumerable<Permission>> GetByGroupAsync(string @group)
+    {
+        return _list.Where(p => p.Group == group);
     }
 }
