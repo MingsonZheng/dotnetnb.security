@@ -1,9 +1,12 @@
-﻿namespace DotNetNB.Security.Core.Models
-{
-    public class Resource
-    {
-        public string Key { get; set; }
+﻿namespace DotNetNB.Security.Core.Models;
 
-        public object Data { get; set; }
-    }
+public class Resource
+{
+    public string Key { get; set; }
+
+    public string Group { get; set; }
+
+    public string Type { get; set; }
+
+    public object Data { get; set; }
 }

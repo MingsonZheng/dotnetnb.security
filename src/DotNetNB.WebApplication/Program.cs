@@ -17,7 +17,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddSecurity(options =>
 {
-    options.AddActionAccessControl();
+    //options.AddActionAccessControl();
     //.AddEntityAccessControl();
 });
 
