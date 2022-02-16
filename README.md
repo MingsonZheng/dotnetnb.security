@@ -29,6 +29,6 @@ PM> Update-Database -Context DotNetNBIdentityDbContext
 PM> Update-Database -Context ApplicationDbContext
 ```
 
-## 登录
+## 默认用户
 - Username：admin
 - Password：Pa$$word666
