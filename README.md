@@ -9,3 +9,26 @@
 - DotNetNB.Security.Store.EntityFramework：基于 mysql 创建 PermissionStore 和 ResourceStore
 - DotNetNB.Security.Identity：将权限赋予角色或用户；在用户登录时将 Permissions 写入用户身份 claims
 - DotNetNB.WebApplication：创建 ResourceController 和 PermissionController 进行验证
+
+## 环境配置
+
+### mysql
+```
+docker pull mysql
+docker run -p 3306:3306 --name mysql -e MYSQL_ROOT_PASSWORD=root@dotnetnb666 -d mysql
+```
+
+### migration
+
+切换到 refactor 分支
+```
+PM> Install-Package Microsoft.EntityFrameworkCore.Tools
+PM> Update-Package Microsoft.EntityFrameworkCore.Tools
+PM> Get-Help about_EntityFrameworkCore
+PM> Update-Database -Context DotNetNBIdentityDbContext
+PM> Update-Database -Context ApplicationDbContext
+```
+
+## 登录
+- Username：admin
+- Password：Pa$$word666
