@@ -1,7 +1,6 @@
-﻿namespace DotNetNB.Security.Core
+﻿namespace DotNetNB.Security.Core;
+
+public static class ClaimsTypes
 {
-    public static class ClaimsTypes
-    {
-        public const string Permission = "Permission";
-    }
+    public const string Permission = "Permission";
 }

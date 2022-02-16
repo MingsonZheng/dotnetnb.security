@@ -1,13 +1,14 @@
-namespace DotNetNB.WebApplication.ViewModels
+namespace DotNetNB.WebApplication.ViewModels;
+
+public class CreatePermissionRequest
 {
-    public class CreatePermissionRequest
-    {
-        public string Key { get; set; }
+    public string Key { get; set; }
 
-        public string DisplayName { get; set; }
+    public string Group { get; set; }
 
-        public string Description { get; set; }
+    public string DisplayName { get; set; }
 
-        public IEnumerable<string> resources { get; set; }
-    }
+    public string Description { get; set; }
+
+    public IEnumerable<string> resources { get; set; }
 }

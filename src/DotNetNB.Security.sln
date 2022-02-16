@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetNB.Security.EntityAcc
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetNB.WebApplication", "DotNetNB.WebApplication\DotNetNB.WebApplication.csproj", "{7AB873B0-5587-44F5-B0A6-8E24E607979F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetNB.Security.Identity", "DotNetNB.Security.Identity\DotNetNB.Security.Identity.csproj", "{0840D471-A124-4D03-B250-EB242EADC3A0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetNB.Security.Identity", "DotNetNB.Security.Identity\DotNetNB.Security.Identity.csproj", "{0840D471-A124-4D03-B250-EB242EADC3A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetNB.Security.Identity.EntityframeworkCore.MySql", "DotNetNB.Security.Identity.EntityframeworkCore.MySql\DotNetNB.Security.Identity.EntityframeworkCore.MySql.csproj", "{84620F2A-AF3C-4087-8A19-CF4D8F86E5EC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{0840D471-A124-4D03-B250-EB242EADC3A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0840D471-A124-4D03-B250-EB242EADC3A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0840D471-A124-4D03-B250-EB242EADC3A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84620F2A-AF3C-4087-8A19-CF4D8F86E5EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84620F2A-AF3C-4087-8A19-CF4D8F86E5EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84620F2A-AF3C-4087-8A19-CF4D8F86E5EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84620F2A-AF3C-4087-8A19-CF4D8F86E5EC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,21 +1,23 @@
 ﻿using DotNetNB.Security.Core.Store;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace DotNetNB.Security.Core.Extensions
-{
-    public static class ServiceCollectionExtensions
-    {
-        public static IServiceCollection AddSecurity(this IServiceCollection services, Action<SecurityOption>? configure)
-        {
-            var option = new SecurityOption { Services = services };
-            configure?.Invoke(option);
+namespace DotNetNB.Security.Core.Extensions;
 
-            services.AddSingleton<IResourceStore, DefaultResourceStore>()
-                .AddSingleton<IPermissionStore, DefaultPermissionStore>()
-                .AddScoped<IResourceManager, ResourceManager>()
-                .AddScoped<IPermissionManager, PermissionManager>()
-                .AddHostedService<ResourceProviderHostedService>();
-            return services;
-        }
+public static class ServiceCollectionExtensions
+{
+    public static ISecurityBuilder AddDotNetNBSecurity(this IServiceCollection services, Action<SecurityBuilder>? configure)
+    {
+        var builder = new SecurityBuilder() { Services = services };
+        configure?.Invoke(builder);
+
+        services
+            .AddSingleton<IResourceStore, DefaultResourceStore>()
+            .AddSingleton<IPermissionStore, DefaultPermissionStore>()
+            .AddScoped<IClaimsProviderFactory, DefaultClaimsProviderFactory>()
+            .AddScoped<IResourceManager, ResourceManager>()
+            .AddScoped<IPermissionManager, PermissionManager>()
+            .AddHostedService<ResourceProviderHostedService>();
+
+        return builder;
     }
 }
