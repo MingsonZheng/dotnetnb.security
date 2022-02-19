@@ -39,3 +39,4 @@ PM> Update-Database -Context ApplicationDbContext
 - [权限系统 代码实现 ActionAccess](https://www.cnblogs.com/MingsonZheng/p/15898449.html)
 - [权限系统 代码实现 EntityAccess](https://www.cnblogs.com/MingsonZheng/p/15902528.html)
 - [权限系统 代码实现 Store.EntityFramework](https://www.cnblogs.com/MingsonZheng/p/15906650.html)
+- [权限系统 代码实现 Identity](https://www.cnblogs.com/MingsonZheng/p/15911606.html)
