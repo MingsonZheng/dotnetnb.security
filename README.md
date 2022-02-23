@@ -42,3 +42,4 @@ PM> Update-Database -Context ApplicationDbContext
 - [权限系统 代码实现 Identity](https://www.cnblogs.com/MingsonZheng/p/15911606.html)
 - [权限系统 代码实现 WebApplication](https://www.cnblogs.com/MingsonZheng/p/15916026.html)
 - [权限系统 代码重构](https://www.cnblogs.com/MingsonZheng/p/15920886.html)
+- [权限系统 系统演示 ActionAccess](https://www.cnblogs.com/MingsonZheng/p/15925035.html)
