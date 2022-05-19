@@ -1,5 +1,4 @@
-# dotnetnb.security
-无代码埋点通用权限管理系统
+# 🚤无代码埋点通用权限管理系统
 
 ![](https://github.com/MingsonZheng/dotnetnb.security/blob/main/image/%E5%B1%82%E7%BA%A7%E5%88%86%E8%A7%A3.jpg)
 
